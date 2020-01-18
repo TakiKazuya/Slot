@@ -182,7 +182,7 @@ class ViewController: UIViewController {
         tappedLeftButton = true
         print(leftCount)
         
-        //7揃い成功時
+        //7成功時
         if leftCount == 7 {
             
             successLeft = true
@@ -195,7 +195,6 @@ class ViewController: UIViewController {
             successLeft = false
             check()
             print(successLeft)
-            
             
         }
 
@@ -211,7 +210,7 @@ class ViewController: UIViewController {
         tappedCenterButton = true
         print(centerCount)
         
-        //7揃い成功時
+        //7成功時
         if centerCount == 7 {
             
             successCenter = true
@@ -226,8 +225,6 @@ class ViewController: UIViewController {
             print(successCenter)
             
         }
-        
-        
     }
     
     //右ボタン
@@ -240,12 +237,14 @@ class ViewController: UIViewController {
         tappedRightButton = true
         print(rightCount)
         
+        //7成功時
         if rightCount == 7{
             
             successRight = true
             check()
             print(successRight)
             
+        //目押し失敗時
         }else if rightCount != 7{
             
             successRight = false
@@ -253,31 +252,29 @@ class ViewController: UIViewController {
             print(successRight)
             
         }
-      
-        
-        
     }
     
     //終わったかどうか判別
     
     func check(){
         
+        //すべてのボタンを押し終わったか判定
         if leftButton.isEnabled == false && leftButton.isEnabled == false && rightButton.isEnabled == false {
             
             startButton.isEnabled = true
             
+            //７揃いしたか判別
             if successLeft == true && successCenter == true && successRight == true{
                 
                 startSuccessAnimation()
                 
+            //7揃い失敗時
             }else{
                 
                 startFalseAnimation()
                 
             }
-            
         }
-        
     }
     
     //効果音を鳴らす
