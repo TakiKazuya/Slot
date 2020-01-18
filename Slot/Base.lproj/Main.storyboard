@@ -15,10 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7" translatesAutoresizingMaskIntoConstraints="NO" id="bUa-mh-WUa">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKV-dv-hcn">
                                 <rect key="frame" x="361" y="312" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -81,7 +77,6 @@
                     <connections>
                         <outlet property="centerButton" destination="zN3-2p-10d" id="nnu-Sq-A1Q"/>
                         <outlet property="centerImageView" destination="ct9-ie-QFh" id="99S-O9-yl3"/>
-                        <outlet property="imageView" destination="bUa-mh-WUa" id="xyt-uX-e9c"/>
                         <outlet property="leftButton" destination="TlL-Pt-5TG" id="QZk-Hr-m63"/>
                         <outlet property="leftImageView" destination="gvh-Hy-eb9" id="A0J-Jr-r9q"/>
                         <outlet property="rightButton" destination="amP-lx-CRk" id="qtI-eO-GXW"/>

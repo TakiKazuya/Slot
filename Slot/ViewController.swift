@@ -13,9 +13,7 @@ import AVFoundation
 class ViewController: UIViewController {
     
     var audioPlayerInstance : AVAudioPlayer! = nil
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
+
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var centerImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
@@ -39,9 +37,15 @@ class ViewController: UIViewController {
     var centerCount = 0
     var rightCount = 0
     
-    var leftCheck = false
-    var centerCheck = false
-    var rightCheck = false
+    //ボタンが押されているか判別する
+    var tappedLeftButton = false
+    var tappedCenterButton = false
+    var tappedRightButton = false
+    
+    //7が押せているか判別する
+    var successLeft = false
+    var successCenter = false
+    var successRight = false
     
     var animationView:AnimationView! = AnimationView()
     
@@ -59,8 +63,6 @@ class ViewController: UIViewController {
         }
         // 再生準備
         audioPlayerInstance.prepareToPlay()
-        
-        imageView.alpha = 0
         
         startButton.layer.cornerRadius = 30
         
@@ -99,11 +101,15 @@ class ViewController: UIViewController {
         centerButton.isEnabled = true
         rightButton.isEnabled = true
         
-        leftCheck = false
-        centerCheck = false
-        rightCheck = false
+        tappedLeftButton = false
+        tappedCenterButton = false
+        tappedRightButton = false
         
-        imageView.alpha = 0
+        successLeft = false
+        successCenter = false
+        successRight = false
+        
+        
         
     }
     
@@ -162,63 +168,89 @@ class ViewController: UIViewController {
     
     //ボタンが押された時の処理
     
+    //左ボタン
     @IBAction func left(_ sender: Any) {
         leftTimer.invalidate()
         leftButton.isEnabled = false
         leftButton.setTitle("🔴", for: [])
         leftTimer = nil
-        check()
         
+        tappedLeftButton = true
+        print(leftCount)
+        
+        //7揃い成功時
         if leftCount == 7 {
             
-            leftCheck = true
-            //7揃い成功時
-            if centerCheck == true && rightCheck == true {
-
-                startSuccessAnimation()
-            }
+            successLeft = true
+            check()
+            print(successLeft)
+            
+        //目押し失敗時
+        }else if leftCount != 7{
+            
+            successLeft = false
+            check()
+            print(successLeft)
+            
             
         }
-        
+
     }
+    
+    //中ボタン
     @IBAction func center(_ sender: Any) {
         centerTimer.invalidate()
         centerButton.isEnabled = false
         centerButton.setTitle("🔴", for: [])
         centerTimer = nil
-        check()
         
-        if centerCount == 7{
+        tappedCenterButton = true
+        print(centerCount)
+        
+        //7揃い成功時
+        if centerCount == 7 {
             
-            centerCheck = true
-            //7揃い成功時
-            if leftCheck == true && rightCheck == true {
-                
-                 startSuccessAnimation()
-                
-            }
+            successCenter = true
+            check()
+            print(successCenter)
+            
+        //目押し失敗時
+        }else if centerCount != 7{
+            
+            successCenter = false
+            check()
+            print(successCenter)
             
         }
         
+        
     }
+    
+    //右ボタン
     @IBAction func right(_ sender: Any) {
         rightTimer.invalidate()
         rightButton.isEnabled = false
         rightButton.setTitle("🔴", for: [])
         rightTimer = nil
-        check()
+        
+        tappedRightButton = true
+        print(rightCount)
         
         if rightCount == 7{
             
-            rightCheck = true
-            //7揃い成功時
-            if leftCheck == true && centerCheck == true {
-                
-                startSuccessAnimation()
-                
-            }
+            successRight = true
+            check()
+            print(successRight)
+            
+        }else if rightCount != 7{
+            
+            successRight = false
+            check()
+            print(successRight)
             
         }
+      
+        
         
     }
     
@@ -229,6 +261,16 @@ class ViewController: UIViewController {
         if leftButton.isEnabled == false && leftButton.isEnabled == false && rightButton.isEnabled == false {
             
             startButton.isEnabled = true
+            
+            if successLeft == true && successCenter == true && successRight == true{
+                
+                startSuccessAnimation()
+                
+            }else{
+                
+                startFalseAnimation()
+                
+            }
             
         }
         
