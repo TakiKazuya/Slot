@@ -18,6 +18,7 @@
 		A828C63B23D2F1EB0082D0BB /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A828C63A23D2F1EB0082D0BB /* 7.mp3 */; };
 		A828C63D23D328360082D0BB /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C63C23D328360082D0BB /* success.json */; };
 		A828C63F23D328420082D0BB /* false.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C63E23D328420082D0BB /* false.json */; };
+		A828C64923D335740082D0BB /* AnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C64823D335740082D0BB /* AnimationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		A828C63A23D2F1EB0082D0BB /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
 		A828C63C23D328360082D0BB /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		A828C63E23D328420082D0BB /* false.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = false.json; sourceTree = "<group>"; };
+		A828C64823D335740082D0BB /* AnimationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationModel.swift; sourceTree = "<group>"; };
 		E0D07675E5E1768426BEF123 /* Pods-Slot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slot.release.xcconfig"; path = "Target Support Files/Pods-Slot/Pods-Slot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 				A828C62423D2C7CA0082D0BB /* AppDelegate.swift */,
 				A828C62623D2C7CA0082D0BB /* SceneDelegate.swift */,
 				A828C63823D2E0D50082D0BB /* TimerModel.swift */,
+				A828C64823D335740082D0BB /* AnimationModel.swift */,
 				A828C62823D2C7CA0082D0BB /* ViewController.swift */,
 				A828C62A23D2C7CA0082D0BB /* Main.storyboard */,
 				A828C62D23D2C7CB0082D0BB /* Assets.xcassets */,
@@ -225,6 +228,7 @@
 				A828C63923D2E0D50082D0BB /* TimerModel.swift in Sources */,
 				A828C62523D2C7CA0082D0BB /* AppDelegate.swift in Sources */,
 				A828C62723D2C7CA0082D0BB /* SceneDelegate.swift in Sources */,
+				A828C64923D335740082D0BB /* AnimationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

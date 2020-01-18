@@ -47,11 +47,15 @@ class ViewController: UIViewController {
     var successCenter = false
     var successRight = false
     
+    var speed = Double()
+    
     var animationView:AnimationView! = AnimationView()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        speed = 0.3
         
         let soundFilePath = Bundle.main.path(forResource: "7", ofType: "mp3")!
         let sound:URL = URL(fileURLWithPath: soundFilePath)
@@ -117,19 +121,19 @@ class ViewController: UIViewController {
     
     func leftStartTimer(){
         
-        leftTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.5), target: self, selector: #selector(leftTimerUpdate), userInfo: nil, repeats: true)
+        leftTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(leftTimerUpdate), userInfo: nil, repeats: true)
         
     }
     
     func centerStartTimer(){
         
-        centerTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.5), target: self, selector: #selector(centerTimerUpdate), userInfo: nil, repeats: true)
+        centerTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(centerTimerUpdate), userInfo: nil, repeats: true)
         
     }
     
     func rightStartTimer(){
         
-        rightTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.5), target: self, selector: #selector(rightTimerUpdate), userInfo: nil, repeats: true)
+        rightTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(rightTimerUpdate), userInfo: nil, repeats: true)
         
     }
     
