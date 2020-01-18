@@ -43,6 +43,8 @@ class ViewController: UIViewController {
     var centerCheck = false
     var rightCheck = false
     
+    var animationView:AnimationView! = AnimationView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,11 +172,10 @@ class ViewController: UIViewController {
         if leftCount == 7 {
             
             leftCheck = true
+            //7揃い成功時
             if centerCheck == true && rightCheck == true {
 
-                imageView.alpha = 1
-                playSound()
-                
+                startSuccessAnimation()
             }
             
         }
@@ -190,10 +191,10 @@ class ViewController: UIViewController {
         if centerCount == 7{
             
             centerCheck = true
+            //7揃い成功時
             if leftCheck == true && rightCheck == true {
                 
-                imageView.alpha = 1
-                playSound()
+                 startSuccessAnimation()
                 
             }
             
@@ -210,10 +211,10 @@ class ViewController: UIViewController {
         if rightCount == 7{
             
             rightCheck = true
+            //7揃い成功時
             if leftCheck == true && centerCheck == true {
                 
-                imageView.alpha = 1
-                playSound()
+                startSuccessAnimation()
                 
             }
             
@@ -242,7 +243,48 @@ class ViewController: UIViewController {
 
     }
     
+    //アニメーション
+    func startSuccessAnimation(){
+        
+        //jsonファイルを読み込んで作動させる
+        let animation = Animation.named("success")
+        animationView.animation = animation
+        animationView.contentMode = .scaleAspectFit
+        animationView.frame = CGRect(x: 0, y: 0,
+                                     width:view.bounds.width, height:view.bounds.height)
+        animationView.loopMode = .playOnce
+        animationView.backgroundColor = .clear
+        view.addSubview(animationView)
+        animationView.play()
+        
+        //２秒後にアニメーションを消す
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+            //2秒後に行いたい処理
+            self.animationView.removeFromSuperview()
+        }
+    }
+    
+    func startFalseAnimation(){
+        
+        //jsonファイルを読み込んで作動させる
+        let animation = Animation.named("false")
+        animationView.animation = animation
+        animationView.contentMode = .scaleAspectFit
+        animationView.frame = CGRect(x: 0, y: 0,
+                                     width:view.bounds.width, height:view.bounds.height)
+        animationView.loopMode = .playOnce
+        animationView.backgroundColor = .clear
+        view.addSubview(animationView)
+        animationView.play()
+        
+        //２秒後にアニメーションを消す
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            //2秒後に行いたい処理
+            self.animationView.removeFromSuperview()
+        }
+    }
 }
+
 
 
 

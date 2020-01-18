@@ -16,6 +16,12 @@
 		A828C63123D2C7CB0082D0BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A828C62F23D2C7CB0082D0BB /* LaunchScreen.storyboard */; };
 		A828C63923D2E0D50082D0BB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C63823D2E0D50082D0BB /* TimerModel.swift */; };
 		A828C63B23D2F1EB0082D0BB /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A828C63A23D2F1EB0082D0BB /* 7.mp3 */; };
+		A828C63D23D328360082D0BB /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C63C23D328360082D0BB /* success.json */; };
+		A828C63F23D328420082D0BB /* false.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C63E23D328420082D0BB /* false.json */; };
+		A828C64123D329330082D0BB /* coin.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C64023D329330082D0BB /* coin.json */; };
+		A828C64523D329470082D0BB /* money-stack.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C64223D329470082D0BB /* money-stack.json */; };
+		A828C64623D329470082D0BB /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C64323D329470082D0BB /* money.json */; };
+		A828C64723D329470082D0BB /* doll.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C64423D329470082D0BB /* doll.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,12 @@
 		A828C63223D2C7CB0082D0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A828C63823D2E0D50082D0BB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		A828C63A23D2F1EB0082D0BB /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
+		A828C63C23D328360082D0BB /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		A828C63E23D328420082D0BB /* false.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = false.json; sourceTree = "<group>"; };
+		A828C64023D329330082D0BB /* coin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coin.json; sourceTree = "<group>"; };
+		A828C64223D329470082D0BB /* money-stack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "money-stack.json"; sourceTree = "<group>"; };
+		A828C64323D329470082D0BB /* money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = money.json; sourceTree = "<group>"; };
+		A828C64423D329470082D0BB /* doll.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doll.json; sourceTree = "<group>"; };
 		E0D07675E5E1768426BEF123 /* Pods-Slot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slot.release.xcconfig"; path = "Target Support Files/Pods-Slot/Pods-Slot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +105,12 @@
 				A828C62F23D2C7CB0082D0BB /* LaunchScreen.storyboard */,
 				A828C63223D2C7CB0082D0BB /* Info.plist */,
 				A828C63A23D2F1EB0082D0BB /* 7.mp3 */,
+				A828C64023D329330082D0BB /* coin.json */,
+				A828C63C23D328360082D0BB /* success.json */,
+				A828C63E23D328420082D0BB /* false.json */,
+				A828C64423D329470082D0BB /* doll.json */,
+				A828C64223D329470082D0BB /* money-stack.json */,
+				A828C64323D329470082D0BB /* money.json */,
 			);
 			path = Slot;
 			sourceTree = "<group>";
@@ -157,10 +175,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A828C63D23D328360082D0BB /* success.json in Resources */,
 				A828C63123D2C7CB0082D0BB /* LaunchScreen.storyboard in Resources */,
 				A828C62E23D2C7CB0082D0BB /* Assets.xcassets in Resources */,
+				A828C64523D329470082D0BB /* money-stack.json in Resources */,
 				A828C63B23D2F1EB0082D0BB /* 7.mp3 in Resources */,
+				A828C64623D329470082D0BB /* money.json in Resources */,
+				A828C64123D329330082D0BB /* coin.json in Resources */,
 				A828C62C23D2C7CA0082D0BB /* Main.storyboard in Resources */,
+				A828C64723D329470082D0BB /* doll.json in Resources */,
+				A828C63F23D328420082D0BB /* false.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
