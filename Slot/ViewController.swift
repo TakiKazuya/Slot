@@ -94,7 +94,9 @@ class ViewController: UIViewController {
         
         // 再生準備
         audioPlayerInstance.prepareToPlay()
-        startButton.layer.cornerRadius = 30
+        
+        settingView.layer.cornerRadius = 20
+        startButton.layer.cornerRadius = 10
         
         
         //配列の準備
@@ -331,14 +333,10 @@ class ViewController: UIViewController {
                 
                 startSuccessAnimation()
                 
-                settingView.isHidden = false
-                
             //7揃い失敗時
             }else{
                 
                 startFalseAnimation()
-                
-                settingView.isHidden = false
                 
             }
         }
@@ -371,6 +369,7 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
             //2秒後に行いたい処理
             self.animationView.removeFromSuperview()
+            self.settingView.isHidden = false
         }
     }
     
@@ -391,6 +390,7 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             //2秒後に行いたい処理
             self.animationView.removeFromSuperview()
+            self.settingView.isHidden = false
         }
     }
     
