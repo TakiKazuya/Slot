@@ -169,11 +169,14 @@ class ViewController: UIViewController {
         //スライダーが0.05を下回った時、セグメントをはやいにする
         if sender.value <= 0.05 {
             segment.selectedSegmentIndex = 0
+            
         //スライダーが0.08を上回った時、セグメントをゆっくりにする
         }else if sender.value >= 0.8{
             segment.selectedSegmentIndex = 2
+            
         }else{
             segment.selectedSegmentIndex = 1
+            
         }
     }
     
