@@ -64,6 +64,9 @@ class ViewController: UIViewController {
     //リールの速さ
     var speed = Double()
     
+    //スライダーの最小単位を0.01にする
+    let step: Float = 0.01
+    
     //アニメーションビュー
     var animationView:AnimationView! = AnimationView()
     
@@ -74,9 +77,11 @@ class ViewController: UIViewController {
         //スピード設定
         speed = 0.1
         slider.addTarget(self, action: #selector(self.speedSetSlider(_:)), for: .valueChanged)
+        segment.selectedSegmentIndex = 1
         slider.setValue(Float(speed), animated: true)
         slider.minimumValue = 0.01
         slider.maximumValue = 1
+        print("スピードは\(speed)です。")
         
         //効果音
         let soundFilePath = Bundle.main.path(forResource: "7", ofType: "mp3")!
@@ -101,6 +106,8 @@ class ViewController: UIViewController {
             rightImageArray.append(image!)
             
         }
+        
+        
         
     }
     
@@ -131,6 +138,29 @@ class ViewController: UIViewController {
         successRight = false
         
         settingView.isHidden = true
+        
+    }
+    
+    //セグメントコントロール
+    @IBAction func segmentControl(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            speed = 0.05
+            slider.setValue(Float(speed), animated: true)
+            print("スピードは\(speed)です。")
+        case 1:
+            speed = 0.1
+            slider.setValue(Float(speed), animated: true)
+            print("スピードは\(speed)です。")
+        case 2:
+            speed = 0.8
+            slider.setValue(Float(speed), animated: true)
+            print("スピードは\(speed)です。")
+        default:
+            print("該当無し")
+        }
+        
         
     }
     
@@ -348,14 +378,14 @@ class ViewController: UIViewController {
         }
     }
     
-    //スライダーの最小単位を0.05にする
-    let step: Float = 0.05
-       @IBAction func speedSetSlider(_ sender: UISlider) {
-           let roudedValue = round(sender.value / step ) * step
-           sender.value = roudedValue
-           speed = Double(sender.value)
-           print(sender.value)
-       }
+    //スライダーの最小単位を決める
+    @IBAction func speedSetSlider(_ sender: UISlider) {
+        let roudedValue = round(sender.value / step ) * step
+        sender.value = roudedValue
+        speed = Double(sender.value)
+        print(sender.value)
+        
+    }
 }
 
 
