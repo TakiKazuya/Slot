@@ -14,25 +14,39 @@ class ViewController: UIViewController {
     
     var audioPlayerInstance : AVAudioPlayer! = nil
 
+    //設定画面
+    @IBOutlet weak var settingView: UIView!
+    
+    //リールの画像
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var centerImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
     
-    
+    //ボタン
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var centerButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     
+    //スタートボタン
     @IBOutlet weak var startButton: UIButton!
     
+    //スライダー
+    @IBOutlet weak var slider: UISlider!
+    
+    //セグメント
+    @IBOutlet weak var segment: UISegmentedControl!
+    
+    //画像を入れる配列
     var leftImageArray = [UIImage]()
     var centerImageArray = [UIImage]()
     var rightImageArray = [UIImage]()
     
+    //タイマー
     var leftTimer:Timer!
     var centerTimer:Timer!
     var rightTimer:Timer!
     
+    //カウント
     var leftCount = 0
     var centerCount = 0
     var rightCount = 0
@@ -47,41 +61,44 @@ class ViewController: UIViewController {
     var successCenter = false
     var successRight = false
     
+    //リールの速さ
     var speed = Double()
     
+    //アニメーションビュー
     var animationView:AnimationView! = AnimationView()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        speed = 0.3
+        //スピード設定
+        speed = 0.1
+        slider.addTarget(self, action: #selector(self.speedSetSlider(_:)), for: .valueChanged)
+        slider.setValue(Float(speed), animated: true)
+        slider.minimumValue = 0.01
+        slider.maximumValue = 1
         
+        //効果音
         let soundFilePath = Bundle.main.path(forResource: "7", ofType: "mp3")!
         let sound:URL = URL(fileURLWithPath: soundFilePath)
-        
         do {
             audioPlayerInstance = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
         } catch {
             print("AVAudioPlayerインスタンス作成でエラー")
         }
+        
         // 再生準備
         audioPlayerInstance.prepareToPlay()
-        
         startButton.layer.cornerRadius = 30
         
+        
+        //配列の準備
         for i in 0...9 {
             
             let image = UIImage(named: "\(i)")
             leftImageArray.append(image!)
             centerImageArray.append(image!)
             rightImageArray.append(image!)
-            
-        }
-        
-        if leftButton.isEnabled == false && leftButton.isEnabled == false && rightButton.isEnabled == false {
-            
-            startButton.isEnabled = true
             
         }
         
@@ -113,7 +130,7 @@ class ViewController: UIViewController {
         successCenter = false
         successRight = false
         
-        
+        settingView.isHidden = true
         
     }
     
@@ -268,10 +285,14 @@ class ViewController: UIViewController {
                 
                 startSuccessAnimation()
                 
+                settingView.isHidden = false
+                
             //7揃い失敗時
             }else{
                 
                 startFalseAnimation()
+                
+                settingView.isHidden = false
                 
             }
         }
@@ -326,6 +347,15 @@ class ViewController: UIViewController {
             self.animationView.removeFromSuperview()
         }
     }
+    
+    //スライダーの最小単位を0.05にする
+    let step: Float = 0.05
+       @IBAction func speedSetSlider(_ sender: UISlider) {
+           let roudedValue = round(sender.value / step ) * step
+           sender.value = roudedValue
+           speed = Double(sender.value)
+           print(sender.value)
+       }
 }
 
 

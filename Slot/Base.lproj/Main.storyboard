@@ -67,18 +67,38 @@
                                 <rect key="frame" x="606" y="68" width="300" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfP-EG-riD">
-                                <rect key="frame" x="323" y="0.0" width="251" height="72"/>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vnB-Iy-7i7">
+                                <rect key="frame" x="144" y="43" width="629" height="299"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfP-EG-riD">
+                                        <rect key="frame" x="214" y="193" width="201" height="72"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="スタート">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LAi-qA-1c2"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Kw-7V-ayP">
+                                        <rect key="frame" x="96" y="57" width="438" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </slider>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fok-7v-nAf">
+                                        <rect key="frame" x="131" y="114" width="367" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="はやい"/>
+                                            <segment title="ふつう"/>
+                                            <segment title="ゆっくり"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="スタート！">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LAi-qA-1c2"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -90,6 +110,9 @@
                         <outlet property="leftImageView" destination="gvh-Hy-eb9" id="A0J-Jr-r9q"/>
                         <outlet property="rightButton" destination="amP-lx-CRk" id="qtI-eO-GXW"/>
                         <outlet property="rightImageView" destination="5L2-5f-CuS" id="KNa-Tl-OMc"/>
+                        <outlet property="segment" destination="fok-7v-nAf" id="6AX-L3-Bws"/>
+                        <outlet property="settingView" destination="vnB-Iy-7i7" id="LPo-Mm-vpv"/>
+                        <outlet property="slider" destination="2Kw-7V-ayP" id="jof-p4-zng"/>
                         <outlet property="startButton" destination="LfP-EG-riD" id="mFk-TV-BRH"/>
                     </connections>
                 </viewController>
