@@ -163,8 +163,6 @@ class ViewController: UIViewController {
         default:
             print("該当無し")
         }
-        
-        
     }
     
     //スライダーを動かした時に、セグメントを変更する
