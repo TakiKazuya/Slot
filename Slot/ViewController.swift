@@ -149,7 +149,7 @@ class ViewController: UIViewController {
         
         switch sender.selectedSegmentIndex {
         case 0:
-            speed = 0.04
+            speed = 0.06
             slider.setValue(Float(speed), animated: true)
             print("スピードは\(speed)です。")
         case 1:
@@ -157,7 +157,7 @@ class ViewController: UIViewController {
             slider.setValue(Float(speed), animated: true)
             print("スピードは\(speed)です。")
         case 2:
-            speed = 0.14
+            speed = 0.16
             slider.setValue(Float(speed), animated: true)
             print("スピードは\(speed)です。")
         default:
@@ -167,16 +167,18 @@ class ViewController: UIViewController {
     
     //スライダーを動かした時に、セグメントを変更する
     @IBAction func moveSlider(_ sender: UISlider) {
-        //スライダーが0.05を下回った時、セグメントをはやいにする
-        if sender.value <= 0.04 {
+        //スライダーが0.04を下回った時、セグメントをはやいにする
+        if sender.value <= 0.06 {
             segment.selectedSegmentIndex = 0
             
-            
-            //スライダーが0.08を上回った時、セグメントをゆっくりにする
-        }else if sender.value >= 0.14{
+        //スライダーが0.08を上回った時、セグメントをゆっくりにする
+        }else if sender.value >= 0.16{
             segment.selectedSegmentIndex = 2
             
-        }else{
+        }else if sender.value >= 0.1{
+            segment.selectedSegmentIndex = 1
+            
+        }else if sender.value <= 0.1{
             segment.selectedSegmentIndex = 1
             
         }
