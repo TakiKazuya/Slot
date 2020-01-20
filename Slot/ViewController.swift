@@ -13,7 +13,7 @@ import AVFoundation
 class ViewController: UIViewController {
     
     var audioPlayerInstance : AVAudioPlayer! = nil
-
+    
     //設定画面
     @IBOutlet weak var settingView: UIView!
     
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     var speed = Double()
     
     //スライダーの最小単位を0.01にする
-    let step: Float = 0.01
+    let step: Float = 0.02
     
     //アニメーションビュー
     var animationView:AnimationView! = AnimationView()
@@ -79,8 +79,8 @@ class ViewController: UIViewController {
         slider.addTarget(self, action: #selector(self.speedSetSlider(_:)), for: .valueChanged)
         segment.selectedSegmentIndex = 1
         slider.setValue(Float(speed), animated: true)
-        slider.minimumValue = 0.01
-        slider.maximumValue = 1
+        slider.minimumValue = 0.02
+        slider.maximumValue = 0.2
         print("スピードは\(speed)です。")
         
         //効果音
@@ -143,12 +143,13 @@ class ViewController: UIViewController {
         
     }
     
+    
     //セグメントコントロール
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
         case 0:
-            speed = 0.05
+            speed = 0.04
             slider.setValue(Float(speed), animated: true)
             print("スピードは\(speed)です。")
         case 1:
@@ -156,7 +157,7 @@ class ViewController: UIViewController {
             slider.setValue(Float(speed), animated: true)
             print("スピードは\(speed)です。")
         case 2:
-            speed = 0.8
+            speed = 0.14
             slider.setValue(Float(speed), animated: true)
             print("スピードは\(speed)です。")
         default:
@@ -169,11 +170,12 @@ class ViewController: UIViewController {
     //スライダーを動かした時に、セグメントを変更する
     @IBAction func moveSlider(_ sender: UISlider) {
         //スライダーが0.05を下回った時、セグメントをはやいにする
-        if sender.value <= 0.05 {
+        if sender.value <= 0.04 {
             segment.selectedSegmentIndex = 0
             
-        //スライダーが0.08を上回った時、セグメントをゆっくりにする
-        }else if sender.value >= 0.8{
+            
+            //スライダーが0.08を上回った時、セグメントをゆっくりにする
+        }else if sender.value >= 0.14{
             segment.selectedSegmentIndex = 2
             
         }else{
@@ -254,7 +256,7 @@ class ViewController: UIViewController {
             check()
             print(successLeft)
             
-        //目押し失敗時
+            //目押し失敗時
         }else if leftCount != 7{
             
             successLeft = false
@@ -262,7 +264,7 @@ class ViewController: UIViewController {
             print(successLeft)
             
         }
-
+        
     }
     
     //中ボタン
@@ -282,7 +284,7 @@ class ViewController: UIViewController {
             check()
             print(successCenter)
             
-        //目押し失敗時
+            //目押し失敗時
         }else if centerCount != 7{
             
             successCenter = false
@@ -309,7 +311,7 @@ class ViewController: UIViewController {
             check()
             print(successRight)
             
-        //目押し失敗時
+            //目押し失敗時
         }else if rightCount != 7{
             
             successRight = false
@@ -324,7 +326,7 @@ class ViewController: UIViewController {
     func check(){
         
         //すべてのボタンを押し終わったか判定
-        if leftButton.isEnabled == false && leftButton.isEnabled == false && rightButton.isEnabled == false {
+        if tappedLeftButton == true && tappedCenterButton == true && tappedRightButton == true {
             
             startButton.isEnabled = true
             
@@ -333,7 +335,7 @@ class ViewController: UIViewController {
                 
                 startSuccessAnimation()
                 
-            //7揃い失敗時
+                //7揃い失敗時
             }else{
                 
                 startFalseAnimation()
@@ -348,7 +350,7 @@ class ViewController: UIViewController {
         
         audioPlayerInstance.currentTime = 0         // 再生箇所を頭に移す
         audioPlayerInstance.play()                  // 再生する
-
+        
     }
     
     //アニメーション
