@@ -17,12 +17,13 @@
 		A828C63B23D2F1EB0082D0BB /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A828C63A23D2F1EB0082D0BB /* 7.mp3 */; };
 		A828C63D23D328360082D0BB /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C63C23D328360082D0BB /* success.json */; };
 		A828C63F23D328420082D0BB /* false.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C63E23D328420082D0BB /* false.json */; };
+		A828C64B23D5E4890082D0BB /* mobileprovision.dms in Resources */ = {isa = PBXBuildFile; fileRef = A828C64A23D5E4890082D0BB /* mobileprovision.dms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		33D44B68432842A06C819F8A /* Pods-Slot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slot.debug.xcconfig"; path = "Target Support Files/Pods-Slot/Pods-Slot.debug.xcconfig"; sourceTree = "<group>"; };
 		3A4CB60C43965D91E6743B89 /* Pods_Slot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A828C62123D2C7CA0082D0BB /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A828C62123D2C7CA0082D0BB /* 真7揃い.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "真7揃い.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A828C62423D2C7CA0082D0BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A828C62623D2C7CA0082D0BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A828C62823D2C7CA0082D0BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +34,7 @@
 		A828C63A23D2F1EB0082D0BB /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
 		A828C63C23D328360082D0BB /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		A828C63E23D328420082D0BB /* false.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = false.json; sourceTree = "<group>"; };
+		A828C64A23D5E4890082D0BB /* mobileprovision.dms */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobileprovision.dms; sourceTree = "<group>"; };
 		E0D07675E5E1768426BEF123 /* Pods-Slot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slot.release.xcconfig"; path = "Target Support Files/Pods-Slot/Pods-Slot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +80,7 @@
 		A828C62223D2C7CA0082D0BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A828C62123D2C7CA0082D0BB /* Slot.app */,
+				A828C62123D2C7CA0082D0BB /* 真7揃い.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +98,7 @@
 				A828C63A23D2F1EB0082D0BB /* 7.mp3 */,
 				A828C63C23D328360082D0BB /* success.json */,
 				A828C63E23D328420082D0BB /* false.json */,
+				A828C64A23D5E4890082D0BB /* mobileprovision.dms */,
 			);
 			path = Slot;
 			sourceTree = "<group>";
@@ -119,7 +122,7 @@
 			);
 			name = Slot;
 			productName = Slot;
-			productReference = A828C62123D2C7CA0082D0BB /* Slot.app */;
+			productReference = A828C62123D2C7CA0082D0BB /* 真7揃い.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A828C63D23D328360082D0BB /* success.json in Resources */,
+				A828C64B23D5E4890082D0BB /* mobileprovision.dms in Resources */,
 				A828C63123D2C7CB0082D0BB /* LaunchScreen.storyboard in Resources */,
 				A828C62E23D2C7CB0082D0BB /* Assets.xcassets in Resources */,
 				A828C63B23D2F1EB0082D0BB /* 7.mp3 in Resources */,
@@ -372,8 +376,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.me.kazup1125.Slot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = bunbun.orange.kazup1125.Slot;
+				PRODUCT_NAME = "真7揃い";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -391,8 +395,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.me.kazup1125.Slot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = bunbun.orange.kazup1125.Slot;
+				PRODUCT_NAME = "真7揃い";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
