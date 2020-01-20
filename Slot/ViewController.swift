@@ -108,9 +108,6 @@ class ViewController: UIViewController {
             rightImageArray.append(image!)
             
         }
-        
-        
-        
     }
     
     //スタートボタンが押された時の処理
@@ -175,6 +172,7 @@ class ViewController: UIViewController {
         }else if sender.value >= 0.16{
             segment.selectedSegmentIndex = 2
             
+        //スライダーが0.1を通ったらふつうにする
         }else if sender.value >= 0.1{
             segment.selectedSegmentIndex = 1
             
@@ -264,7 +262,6 @@ class ViewController: UIViewController {
             print(successLeft)
             
         }
-        
     }
     
     //中ボタン
