@@ -15,31 +15,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        let storyboard:UIStoryboard = self.grabStoryboard()
-//        
-//        if let window = window{
-//            window.rootViewController = storyboard.instantiateInitialViewController() as UIViewController?
-//        }
-//        self.window?.makeKeyAndVisible()
+        let storyboard:UIStoryboard = self.grabStoryboard()
+        
+        if let window = window{
+            window.rootViewController = storyboard.instantiateInitialViewController() as UIViewController?
+        }
+        self.window?.makeKeyAndVisible()
         return true
     }
     
-    func grabStoryboard() -> UIStoryboard{
+   func grabStoryboard() -> UIStoryboard{
         
         var storyboard = UIStoryboard()
         let height = UIScreen.main.bounds.size.height
-        if height == 667 {
+        let width = UIScreen.main.bounds.size.width
+        if height == 375 {
             storyboard = UIStoryboard(name: "iPhone8", bundle: nil)
             //iPhone8.storyboard
-        }else if height == 736 {
+        }else if height == 414 {
             storyboard = UIStoryboard(name: "iPhone8Plus", bundle: nil)
             //iPhone8Plus
-        }else if height == 812{
+            if height == 414 && width == 896{
+                storyboard = UIStoryboard(name: "Main", bundle: nil)
+                //main.storyboard
+            }
+        }else if height == 375{
             storyboard = UIStoryboard(name: "iPhone11Pro", bundle: nil)
             //iPhone11Pro.storyboard
-        }else if height == 896{
-            storyboard = UIStoryboard(name: "Main", bundle: nil)
-            //iPhone11.storyboard
         }else if height == 1112{
             
             storyboard = UIStoryboard(name: "iPad", bundle: nil)
@@ -59,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return storyboard
     }
+
 
     // MARK: UISceneSession Lifecycle
 
