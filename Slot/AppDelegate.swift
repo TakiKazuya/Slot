@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             storyboard = UIStoryboard(name: "iPhone8Plus", bundle: nil)
             //iPhone8Plus
         }else if height == 812{
-            storyboard = UIStoryboard(name: "iPhoneX", bundle: nil)
+            storyboard = UIStoryboard(name: "iPhone11Pro", bundle: nil)
             //iPhone11Pro.storyboard
         }else if height == 896{
             storyboard = UIStoryboard(name: "Main", bundle: nil)

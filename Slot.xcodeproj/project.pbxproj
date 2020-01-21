@@ -19,6 +19,7 @@
 		A828C63F23D328420082D0BB /* false.json in Resources */ = {isa = PBXBuildFile; fileRef = A828C63E23D328420082D0BB /* false.json */; };
 		A828C64B23D5E4890082D0BB /* mobileprovision.dms in Resources */ = {isa = PBXBuildFile; fileRef = A828C64A23D5E4890082D0BB /* mobileprovision.dms */; };
 		A82C089C23D70474001CFECC /* iPhone11Pro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82C089B23D70474001CFECC /* iPhone11Pro.storyboard */; };
+		A82C089E23D7064E001CFECC /* iPhone8Plus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82C089D23D7064E001CFECC /* iPhone8Plus.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		A828C63E23D328420082D0BB /* false.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = false.json; sourceTree = "<group>"; };
 		A828C64A23D5E4890082D0BB /* mobileprovision.dms */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobileprovision.dms; sourceTree = "<group>"; };
 		A82C089B23D70474001CFECC /* iPhone11Pro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhone11Pro.storyboard; sourceTree = "<group>"; };
+		A82C089D23D7064E001CFECC /* iPhone8Plus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhone8Plus.storyboard; sourceTree = "<group>"; };
 		E0D07675E5E1768426BEF123 /* Pods-Slot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slot.release.xcconfig"; path = "Target Support Files/Pods-Slot/Pods-Slot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				A828C62423D2C7CA0082D0BB /* AppDelegate.swift */,
 				A828C62623D2C7CA0082D0BB /* SceneDelegate.swift */,
 				A828C62823D2C7CA0082D0BB /* ViewController.swift */,
+				A82C089D23D7064E001CFECC /* iPhone8Plus.storyboard */,
 				A82C089B23D70474001CFECC /* iPhone11Pro.storyboard */,
 				A828C62A23D2C7CA0082D0BB /* Main.storyboard */,
 				A828C62D23D2C7CB0082D0BB /* Assets.xcassets */,
@@ -172,6 +175,7 @@
 				A828C62E23D2C7CB0082D0BB /* Assets.xcassets in Resources */,
 				A82C089C23D70474001CFECC /* iPhone11Pro.storyboard in Resources */,
 				A828C63B23D2F1EB0082D0BB /* 7.mp3 in Resources */,
+				A82C089E23D7064E001CFECC /* iPhone8Plus.storyboard in Resources */,
 				A828C62C23D2C7CA0082D0BB /* Main.storyboard in Resources */,
 				A828C63F23D328420082D0BB /* false.json in Resources */,
 			);
