@@ -15,14 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let storyboard:UIStoryboard = self.grabStoryboard()
-        
-        if let window = window{
-            window.rootViewController = storyboard.instantiateInitialViewController() as UIViewController?
-        }
-        self.window?.makeKeyAndVisible()
+//        let storyboard:UIStoryboard = self.grabStoryboard()
+//        
+//        if let window = window{
+//            window.rootViewController = storyboard.instantiateInitialViewController() as UIViewController?
+//        }
+//        self.window?.makeKeyAndVisible()
         return true
     }
+    
     func grabStoryboard() -> UIStoryboard{
         
         var storyboard = UIStoryboard()
