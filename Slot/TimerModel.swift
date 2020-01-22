@@ -38,7 +38,7 @@ class TimerModel{
     func stopTimer(){
         timer.invalidate()
         timer = nil
-    }
+}
     
     func getCount()->Int{
         return count

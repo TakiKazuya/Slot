@@ -23,70 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "63B113CA-CC60-486E-B8CC-64D4E5D6BDC0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Slot/TimerModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "init(speed:imageView:imageArray:count:timer:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "63B113CA-CC60-486E-B8CC-64D4E5D6BDC0 - 5a47ac05951692d"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "&#x771f;7&#x63c3;&#x3044;.TimerModel.__allocating_init(speed: Swift.Double, imageView: __C.UIImageView, imageArray: Swift.Array&lt;__C.UIImage&gt;, count: Swift.Int, target: Any) -&gt; &#x771f;7&#x63c3;&#x3044;.TimerModel"
-                  moduleName = "&#x771f;7&#x63c3;&#x3044;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kokubukazuya/Library/Autosave%20Information/Practice/Slot/Slot/TimerModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "19">
-               </Location>
-               <Location
-                  uuid = "63B113CA-CC60-486E-B8CC-64D4E5D6BDC0 - 83a0f176a48f627d"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "&#x771f;7&#x63c3;&#x3044;.TimerModel.init(speed: Swift.Double, imageView: __C.UIImageView, imageArray: Swift.Array&lt;__C.UIImage&gt;, count: Swift.Int, target: Any) -&gt; &#x771f;7&#x63c3;&#x3044;.TimerModel"
-                  moduleName = "&#x771f;7&#x63c3;&#x3044;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kokubukazuya/Library/Autosave%20Information/Practice/Slot/Slot/TimerModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "86">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E706B2D4-3EB5-4FA2-AC83-992BC0667DF5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Slot/TimerModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "startTimer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AE70201E-59C3-4E09-BF27-6ED86B211D1E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -96,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "getCount(count:)"
+            landmarkName = "timerUpdate()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -130,22 +66,6 @@
             endingLineNumber = "46"
             landmarkName = "TimerModel"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C6975CB5-1747-4D85-88F3-C0F8E2905E15"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Slot/TimerModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "startTimer()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,22 +112,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "startTimer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DCDAABAC-24FC-4A76-BDBB-E351B0CDF961"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Slot/TimerModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
             landmarkName = "startTimer()"
             landmarkType = "7">
          </BreakpointContent>

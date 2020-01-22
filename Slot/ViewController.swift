@@ -378,44 +378,45 @@ class ViewController: UIViewController {
         print(sender.value)
         
     }
-    //スタートタイマー
-    
-    func leftStartTimer(){
-        leftTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(leftTimerUpdate), userInfo: nil, repeats: true)
-    }
-    
-    func centerStartTimer(){
-        centerTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(centerTimerUpdate), userInfo: nil, repeats: true)
-    }
-    
-    func rightStartTimer(){
-        rightTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(rightTimerUpdate), userInfo: nil, repeats: true)
-    }
-    
-    //タイマーアップデート
-    @objc func leftTimerUpdate() {
-        leftCount += 1
-        if leftCount >= 9{
-            leftCount = 0
-        }
-        leftImageView.image = leftImageArray[leftCount]
-    }
-    
-    @objc func centerTimerUpdate() {
-        centerCount += 1
-        if centerCount >= 9{
-            centerCount = 0
-        }
-        centerImageView.image = centerImageArray[centerCount]
-    }
-    
-    @objc func rightTimerUpdate() {
-        rightCount += 1
-        if rightCount >= 9{
-            rightCount = 0
-        }
-        rightImageView.image = rightImageArray[rightCount]
-    }
+//
+//    //スタートタイマー
+//
+//    func leftStartTimer(){
+//        leftTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(leftTimerUpdate), userInfo: nil, repeats: true)
+//    }
+//
+//    func centerStartTimer(){
+//        centerTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(centerTimerUpdate), userInfo: nil, repeats: true)
+//    }
+//
+//    func rightStartTimer(){
+//        rightTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(rightTimerUpdate), userInfo: nil, repeats: true)
+//    }
+//
+//    //タイマーアップデート
+//    @objc func leftTimerUpdate() {
+//        leftCount += 1
+//        if leftCount >= 9{
+//            leftCount = 0
+//        }
+//        leftImageView.image = leftImageArray[leftCount]
+//    }
+//
+//    @objc func centerTimerUpdate() {
+//        centerCount += 1
+//        if centerCount >= 9{
+//            centerCount = 0
+//        }
+//        centerImageView.image = centerImageArray[centerCount]
+//    }
+//
+//    @objc func rightTimerUpdate() {
+//        rightCount += 1
+//        if rightCount >= 9{
+//            rightCount = 0
+//        }
+//        rightImageView.image = rightImageArray[rightCount]
+//    }
     
 }
 
