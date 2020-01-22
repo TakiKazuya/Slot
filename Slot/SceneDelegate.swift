@@ -41,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //iPhone8Plus
             if height == 414 && width == 896{
                 storyboard = UIStoryboard(name: "Main", bundle: nil)
-                //main.storyboard
+                //Main.storyboard
             }
         }else if height == 375{
             storyboard = UIStoryboard(name: "iPhone11Pro", bundle: nil)

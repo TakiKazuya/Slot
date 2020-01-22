@@ -110,6 +110,49 @@ class ViewController: UIViewController {
         }
     }
     
+    //セグメントコントロール
+    @IBAction func segmentControl(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            speed = 0.06
+            slider.setValue(Float(speed), animated: true)
+            print("スピードは\(speed)です。")
+        case 1:
+            speed = 0.1
+            slider.setValue(Float(speed), animated: true)
+            print("スピードは\(speed)です。")
+        case 2:
+            speed = 0.16
+            slider.setValue(Float(speed), animated: true)
+            print("スピードは\(speed)です。")
+        default:
+            print("該当無し")
+        }
+    }
+    
+    //スライダーを動かした時に、セグメントを変更する
+    @IBAction func moveSlider(_ sender: UISlider) {
+        //スライダーが0.04を下回った時、セグメントをはやいにする
+        if sender.value <= 0.06 {
+            segment.selectedSegmentIndex = 0
+            
+            //スライダーが0.08を上回った時、セグメントをゆっくりにする
+        }else if sender.value >= 0.16{
+            segment.selectedSegmentIndex = 2
+            
+            //スライダーが0.1を通ったらふつうにする
+        }else if sender.value >= 0.1{
+            segment.selectedSegmentIndex = 1
+            
+        }else if sender.value <= 0.1{
+            segment.selectedSegmentIndex = 1
+            
+        }
+    }
+    
+    
+    
     //スタートボタンが押された時の処理
     
     @IBAction func start(_ sender: Any) {
@@ -141,85 +184,6 @@ class ViewController: UIViewController {
     }
     
     
-    //セグメントコントロール
-    @IBAction func segmentControl(_ sender: UISegmentedControl) {
-        
-        switch sender.selectedSegmentIndex {
-        case 0:
-            speed = 0.06
-            slider.setValue(Float(speed), animated: true)
-            print("スピードは\(speed)です。")
-        case 1:
-            speed = 0.1
-            slider.setValue(Float(speed), animated: true)
-            print("スピードは\(speed)です。")
-        case 2:
-            speed = 0.16
-            slider.setValue(Float(speed), animated: true)
-            print("スピードは\(speed)です。")
-        default:
-            print("該当無し")
-        }
-    }
-    
-    //スライダーを動かした時に、セグメントを変更する
-    @IBAction func moveSlider(_ sender: UISlider) {
-        //スライダーが0.04を下回った時、セグメントをはやいにする
-        if sender.value <= 0.06 {
-            segment.selectedSegmentIndex = 0
-            
-        //スライダーが0.08を上回った時、セグメントをゆっくりにする
-        }else if sender.value >= 0.16{
-            segment.selectedSegmentIndex = 2
-            
-        //スライダーが0.1を通ったらふつうにする
-        }else if sender.value >= 0.1{
-            segment.selectedSegmentIndex = 1
-            
-        }else if sender.value <= 0.1{
-            segment.selectedSegmentIndex = 1
-            
-        }
-    }
-    
-    //スタートタイマー
-    
-    func leftStartTimer(){
-        leftTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(leftTimerUpdate), userInfo: nil, repeats: true)
-    }
-    
-    func centerStartTimer(){
-        centerTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(centerTimerUpdate), userInfo: nil, repeats: true)
-    }
-    
-    func rightStartTimer(){
-        rightTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(rightTimerUpdate), userInfo: nil, repeats: true)
-    }
-    
-    //タイマーアップデート
-    @objc func leftTimerUpdate() {
-        leftCount += 1
-        if leftCount >= 9{
-            leftCount = 0
-        }
-        leftImageView.image = leftImageArray[leftCount]
-    }
-
-    @objc func centerTimerUpdate() {
-        centerCount += 1
-        if centerCount >= 9{
-            centerCount = 0
-        }
-        centerImageView.image = centerImageArray[centerCount]
-    }
-    
-    @objc func rightTimerUpdate() {
-        rightCount += 1
-        if rightCount >= 9{
-            rightCount = 0
-        }
-        rightImageView.image = rightImageArray[rightCount]
-    }
     
     
     //ボタンが押された時の処理
@@ -388,6 +352,45 @@ class ViewController: UIViewController {
         print(sender.value)
         
     }
+    //スタートタイマー
+    
+    func leftStartTimer(){
+        leftTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(leftTimerUpdate), userInfo: nil, repeats: true)
+    }
+    
+    func centerStartTimer(){
+        centerTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(centerTimerUpdate), userInfo: nil, repeats: true)
+    }
+    
+    func rightStartTimer(){
+        rightTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(rightTimerUpdate), userInfo: nil, repeats: true)
+    }
+    
+    //タイマーアップデート
+    @objc func leftTimerUpdate() {
+        leftCount += 1
+        if leftCount >= 9{
+            leftCount = 0
+        }
+        leftImageView.image = leftImageArray[leftCount]
+    }
+    
+    @objc func centerTimerUpdate() {
+        centerCount += 1
+        if centerCount >= 9{
+            centerCount = 0
+        }
+        centerImageView.image = centerImageArray[centerCount]
+    }
+    
+    @objc func rightTimerUpdate() {
+        rightCount += 1
+        if rightCount >= 9{
+            rightCount = 0
+        }
+        rightImageView.image = rightImageArray[rightCount]
+    }
+    
 }
 
 
