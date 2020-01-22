@@ -16,19 +16,24 @@ class TimerModel{
     var imageArray = [UIImage]()
     var count = Int()
     var timer:Timer!
-    var target:Any
+    var target:UIViewController
     
-    init(speed:Double,imageView:UIImageView,imageArray:[UIImage],count:Int,target:Any) {
+    init(speed:Double,imageView:UIImageView,imageArray:[UIImage],count:Int,target:UIViewController,timer:Timer) {
         self.speed = speed
         self.imageView = imageView
         self.imageArray = imageArray
         self.count = count
         self.target = target
+        self.timer = timer
     }
     
     
     func startTimer(){
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: target, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(speed),
+                                     target: target,
+                                     selector: #selector(self.timerUpdate),
+                                     userInfo: nil,
+                                     repeats: true)
     }
     
     func stopTimer(){

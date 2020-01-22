@@ -42,9 +42,9 @@ class ViewController: UIViewController {
     var rightImageArray = [UIImage]()
     
     //タイマー
-    var leftTimer:Timer!
-    var centerTimer:Timer!
-    var rightTimer:Timer!
+    var leftTimer = Timer()
+    var centerTimer = Timer()
+    var rightTimer = Timer()
     
     //カウント
     var leftCount = 0
@@ -161,10 +161,10 @@ class ViewController: UIViewController {
     
     @IBAction func start(_ sender: Any) {
         
-        leftTimerModel = TimerModel(speed: Double(speed), imageView: leftImageView, imageArray: leftImageArray, count: leftCount, target: self)
-        centerTimerModel = TimerModel(speed: Double(speed), imageView: centerImageView, imageArray: centerImageArray, count: centerCount, target: self)
+        leftTimerModel = TimerModel(speed: Double(speed), imageView: leftImageView, imageArray: leftImageArray, count: leftCount, target: self, timer: leftTimer)
+        centerTimerModel = TimerModel(speed: Double(speed), imageView: centerImageView, imageArray: centerImageArray, count: centerCount, target: self, timer: centerTimer)
         
-        rightTimerModel = TimerModel(speed: Double(speed), imageView: rightImageView, imageArray: rightImageArray, count: rightCount, target: self)
+        rightTimerModel = TimerModel(speed: Double(speed), imageView: rightImageView, imageArray: rightImageArray, count: rightCount, target: self, timer: rightTimer)
         
         leftTimerModel.startTimer()
         centerTimerModel.startTimer()
