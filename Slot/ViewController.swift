@@ -84,7 +84,7 @@ class ViewController: UIViewController {
         segment.selectedSegmentIndex = 1
         slider.setValue(Float(speed), animated: true)
         slider.minimumValue = 0.02
-        slider.maximumValue = 0.2
+        slider.maximumValue = 0.22
         print("スピードは\(speed)です。")
         
         //効果音
@@ -212,6 +212,8 @@ class ViewController: UIViewController {
         leftButton.isEnabled = false
         leftButton.setTitle("🔴", for: [])
         
+        leftCount = leftTimerModel.getCount()
+        
         tappedLeftButton = true
         print(leftCount)
         
@@ -241,6 +243,8 @@ class ViewController: UIViewController {
         centerButton.isEnabled = false
         centerButton.setTitle("🔴", for: [])
         
+        centerCount = centerTimerModel.getCount()
+        
         tappedCenterButton = true
         print(centerCount)
         
@@ -268,6 +272,8 @@ class ViewController: UIViewController {
         rightTimerModel.stopTimer()
         rightButton.isEnabled = false
         rightButton.setTitle("🔴", for: [])
+        
+        rightCount = rightTimerModel.getCount()
         
         tappedRightButton = true
         print(rightCount)

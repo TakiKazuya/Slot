@@ -40,6 +40,10 @@ class TimerModel{
         timer = nil
     }
     
+    func getCount()->Int{
+        return count
+    }
+    
     @objc func timerUpdate() {
         count += 1
         if count >= 9{
