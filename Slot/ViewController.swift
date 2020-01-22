@@ -70,6 +70,7 @@ class ViewController: UIViewController {
     //アニメーションビュー
     var animationView:AnimationView! = AnimationView()
     
+    //TimerModelを使えるようにする
     var leftTimerModel:TimerModel!
     var centerTimerModel:TimerModel!
     var rightTimerModel:TimerModel!
@@ -161,20 +162,16 @@ class ViewController: UIViewController {
     
     @IBAction func start(_ sender: Any) {
         
+        //TimerModelにそれぞれ値を入れる
         leftTimerModel = TimerModel(speed: Double(speed), imageView: leftImageView, imageArray: leftImageArray, count: leftCount, timer: leftTimer)
         centerTimerModel = TimerModel(speed: Double(speed), imageView: centerImageView, imageArray: centerImageArray, count: centerCount, timer: centerTimer)
         
         rightTimerModel = TimerModel(speed: Double(speed), imageView: rightImageView, imageArray: rightImageArray, count: rightCount, timer: rightTimer)
         
+        //タイマー始動
         leftTimerModel.startTimer()
         centerTimerModel.startTimer()
         rightTimerModel.startTimer()
-        
-        
-//
-//        leftStartTimer()
-//        centerStartTimer()
-//        rightStartTimer()
         
         startButton.isEnabled = false
         
@@ -205,8 +202,6 @@ class ViewController: UIViewController {
     
     //左ボタン
     @IBAction func left(_ sender: Any) {
-//        leftTimer.invalidate()
-//        leftTimer = nil
         leftTimerModel.stopTimer()
         
         leftButton.isEnabled = false
@@ -236,9 +231,6 @@ class ViewController: UIViewController {
     
     //中ボタン
     @IBAction func center(_ sender: Any) {
-//        centerTimer.invalidate()
-//        centerTimer = nil
-        
         centerTimerModel.stopTimer()
         centerButton.isEnabled = false
         centerButton.setTitle("🔴", for: [])
@@ -267,8 +259,6 @@ class ViewController: UIViewController {
     
     //右ボタン
     @IBAction func right(_ sender: Any) {
-//        rightTimer.invalidate()
-//        rightTimer = nil
         rightTimerModel.stopTimer()
         rightButton.isEnabled = false
         rightButton.setTitle("🔴", for: [])
@@ -378,45 +368,6 @@ class ViewController: UIViewController {
         print(sender.value)
         
     }
-//
-//    //スタートタイマー
-//
-//    func leftStartTimer(){
-//        leftTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(leftTimerUpdate), userInfo: nil, repeats: true)
-//    }
-//
-//    func centerStartTimer(){
-//        centerTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(centerTimerUpdate), userInfo: nil, repeats: true)
-//    }
-//
-//    func rightStartTimer(){
-//        rightTimer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(rightTimerUpdate), userInfo: nil, repeats: true)
-//    }
-//
-//    //タイマーアップデート
-//    @objc func leftTimerUpdate() {
-//        leftCount += 1
-//        if leftCount >= 9{
-//            leftCount = 0
-//        }
-//        leftImageView.image = leftImageArray[leftCount]
-//    }
-//
-//    @objc func centerTimerUpdate() {
-//        centerCount += 1
-//        if centerCount >= 9{
-//            centerCount = 0
-//        }
-//        centerImageView.image = centerImageArray[centerCount]
-//    }
-//
-//    @objc func rightTimerUpdate() {
-//        rightCount += 1
-//        if rightCount >= 9{
-//            rightCount = 0
-//        }
-//        rightImageView.image = rightImageArray[rightCount]
-//    }
     
 }
 
