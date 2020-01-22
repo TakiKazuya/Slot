@@ -325,7 +325,7 @@ class ViewController: UIViewController {
         animationView.animation = animation
         animationView.contentMode = .scaleAspectFit
         animationView.frame = CGRect(x: 0, y: 0,
-                                     width:view.bounds.width, height:view.bounds.height)
+                                     width:view.bounds.width, height:view.bounds.height / 1.5)
         animationView.loopMode = .playOnce
         animationView.backgroundColor = .clear
         view.addSubview(animationView)
@@ -346,7 +346,7 @@ class ViewController: UIViewController {
         animationView.animation = animation
         animationView.contentMode = .scaleAspectFit
         animationView.frame = CGRect(x: 0, y: 0,
-                                     width:view.bounds.width, height:view.bounds.height)
+                                     width:view.bounds.width, height:view.bounds.height / 1.5)
         animationView.loopMode = .playOnce
         animationView.backgroundColor = .clear
         view.addSubview(animationView)
