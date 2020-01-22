@@ -70,6 +70,10 @@ class ViewController: UIViewController {
     //アニメーションビュー
     var animationView:AnimationView! = AnimationView()
     
+    var leftTimerModel:TimerModel!
+    var centerTimerModel:TimerModel!
+    var rightTimerModel:TimerModel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,9 +161,20 @@ class ViewController: UIViewController {
     
     @IBAction func start(_ sender: Any) {
         
-        leftStartTimer()
-        centerStartTimer()
-        rightStartTimer()
+        leftTimerModel = TimerModel(speed: Double(speed), imageView: leftImageView, imageArray: leftImageArray, count: leftCount, target: self)
+        centerTimerModel = TimerModel(speed: Double(speed), imageView: centerImageView, imageArray: centerImageArray, count: centerCount, target: self)
+        
+        rightTimerModel = TimerModel(speed: Double(speed), imageView: rightImageView, imageArray: rightImageArray, count: rightCount, target: self)
+        
+        leftTimerModel.startTimer()
+        centerTimerModel.startTimer()
+        rightTimerModel.startTimer()
+        
+        
+//
+//        leftStartTimer()
+//        centerStartTimer()
+//        rightStartTimer()
         
         startButton.isEnabled = false
         
@@ -190,10 +205,12 @@ class ViewController: UIViewController {
     
     //左ボタン
     @IBAction func left(_ sender: Any) {
-        leftTimer.invalidate()
+//        leftTimer.invalidate()
+//        leftTimer = nil
+        leftTimerModel.stopTimer()
+        
         leftButton.isEnabled = false
         leftButton.setTitle("🔴", for: [])
-        leftTimer = nil
         
         tappedLeftButton = true
         print(leftCount)
@@ -217,10 +234,12 @@ class ViewController: UIViewController {
     
     //中ボタン
     @IBAction func center(_ sender: Any) {
-        centerTimer.invalidate()
+//        centerTimer.invalidate()
+//        centerTimer = nil
+        
+        centerTimerModel.stopTimer()
         centerButton.isEnabled = false
         centerButton.setTitle("🔴", for: [])
-        centerTimer = nil
         
         tappedCenterButton = true
         print(centerCount)
@@ -244,10 +263,11 @@ class ViewController: UIViewController {
     
     //右ボタン
     @IBAction func right(_ sender: Any) {
-        rightTimer.invalidate()
+//        rightTimer.invalidate()
+//        rightTimer = nil
+        rightTimerModel.stopTimer()
         rightButton.isEnabled = false
         rightButton.setTitle("🔴", for: [])
-        rightTimer = nil
         
         tappedRightButton = true
         print(rightCount)

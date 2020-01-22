@@ -11,14 +11,14 @@ import UIKit
 
 class TimerModel{
     
-    var speed = Int()
+    var speed = Double()
     var imageView = UIImageView()
     var imageArray = [UIImage]()
     var count = Int()
     var timer:Timer!
     var target:Any
     
-    init(speed:Int,imageView:UIImageView,imageArray:[UIImage],count:Int,target:Any) {
+    init(speed:Double,imageView:UIImageView,imageArray:[UIImage],count:Int,target:Any) {
         self.speed = speed
         self.imageView = imageView
         self.imageArray = imageArray
@@ -29,6 +29,11 @@ class TimerModel{
     
     func startTimer(){
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: target, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer(){
+        timer.invalidate()
+        timer = nil
     }
     
     @objc func timerUpdate() {
